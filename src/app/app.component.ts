@@ -98,4 +98,51 @@ export class MyApp {
       .subscribe(res => console.log(res), err => console.error('error'));
     this.currentUser = undefined;
   }
+
+  signUpPopUp() {
+    console.log('popup');
+    let confirm = this.alertCtrl.create({
+      title: 'Sign up',
+      inputs: [
+        {
+          name: 'email',
+          placeholder: 'email'
+        },
+        {
+          name: 'password',
+          placeholder: 'password',
+          type: 'password'
+        },
+        {
+          name: 'password_confirmation',
+          placeholder: 'password confirmation',
+          type: 'password'
+        }
+      ],
+      buttons: [
+        {
+          text: 'Cancel',
+          handler: data => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Sign up',
+          handler: data => {
+            this.signup(data);
+          }
+        }
+      ]
+    });
+    confirm.present();
+  }
+
+  signup(credentials) {
+    this._tokenService
+      .registerAccount(credentials)
+      .subscribe(
+        res =>      console.log(res),
+        error =>    console.log(error)
+      );
+  }
 }
