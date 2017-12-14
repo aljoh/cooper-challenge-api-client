@@ -27,6 +27,9 @@ export class HomePage {
 
     this.person.doAssessment(this.user.distance);
     console.log(this.person.assessmentMessage);
+  }
+
+  saveResults() {
     this.performancedata
       .saveData({ performance_data: { data: { message: this.person.assessmentMessage } } })
       .subscribe(data => console.log(data));
