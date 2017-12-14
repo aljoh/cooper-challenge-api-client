@@ -114,7 +114,7 @@ export class MyApp {
           type: 'password'
         },
         {
-          name: 'password_confirmation',
+          name: 'passwordConfirmation',
           placeholder: 'password confirmation',
           type: 'password'
         }
