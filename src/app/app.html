@@ -19,8 +19,8 @@
       <button ion-item (click)="signUpPopUp()" *ngIf="!currentUser">
         Sign up
       </button>
-      <button ion-item (click)="updatePopUp()" *ngIf="currentUser">
-        Update account
+      <button ion-item (click)="passwordResetPopUp()" *ngIf="currentUser">
+        Reset password
       </button>
     </ion-list>
   </ion-content>

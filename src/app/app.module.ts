@@ -11,6 +11,7 @@ import { CooperProvider } from '../providers/cooper/cooper';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { Angular2TokenService } from 'angular2-token';
+import { PerfomanceDataProvider } from '../providers/perfomance-data/perfomance-data';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { Angular2TokenService } from 'angular2-token';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     PersonProvider,
     CooperProvider,
-    Angular2TokenService
+    Angular2TokenService,
+    PerfomanceDataProvider
   ]
 })
 export class AppModule {}
