@@ -141,8 +141,42 @@ export class MyApp {
     this._tokenService
       .registerAccount(credentials)
       .subscribe(
-        res =>      console.log(res),
-        error =>    console.log(error)
+      res => console.log(res),
+      error => console.log(error)
       );
   }
+  passwordResetPopUp() {
+    console.log('popup');
+    let confirm = this.alertCtrl.create({
+      title: 'Reset Password',
+      inputs: [
+        {
+          name: 'email',
+          placeholder: 'email'
+        }],
+      buttons: [
+        {
+          text: 'Cancel',
+          handler: data => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Reset Password',
+          handler: data => {
+            this.resetPassword(data);
+          }
+        }
+      ]
+    });
+    confirm.present();
+  }
+  resetPassword(credentials) {
+    this._tokenService
+      .resetPassword(credentials)
+      .subscribe(
+      res => console.log(res),
+      error => console.log(error)
+      )
+  };
 }
