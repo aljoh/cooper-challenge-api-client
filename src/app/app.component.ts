@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { Angular2TokenService } from 'angular2-token';
 import { HomePage } from '../pages/home/home';
 import { AlertController } from 'ionic-angular';
+import { Vo2maxPage } from '../pages/vo2max/vo2max'
 
 @Component({
   templateUrl: 'app.html'
@@ -30,7 +31,8 @@ export class MyApp {
 
     this.initializeApp();
     this.pages = [
-      { title: 'Home', component: HomePage }
+      { title: 'Home', component: HomePage },
+      { title: 'Vo2max', component: Vo2maxPage }
     ];
 
   }

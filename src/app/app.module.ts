@@ -13,12 +13,14 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { Angular2TokenService } from 'angular2-token';
 import { PerfomanceDataProvider } from '../providers/perfomance-data/perfomance-data';
+import { Vo2maxPage } from '../pages/vo2max/vo2max'
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ResultsPage
+    ResultsPage,
+    Vo2maxPage
   ],
   imports: [
     BrowserModule,
@@ -30,7 +32,8 @@ import { PerfomanceDataProvider } from '../providers/perfomance-data/perfomance-
   entryComponents: [
     MyApp,
     HomePage,
-    ResultsPage
+    ResultsPage,
+    Vo2maxPage
   ],
   providers: [
     StatusBar,
